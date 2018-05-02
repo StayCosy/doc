@@ -1,0 +1,22 @@
+#类依赖关系表
+CREATE TABLE `AutoTest`.`ClassDepends`  (
+  `AT_INDX` int(255) NOT NULL AUTO_INCREMENT COMMENT '自动化测试案例索引号',
+  `CLASS_NAME` varchar(255) NOT NULL COMMENT '实现类BeanId',
+  `DEPEND_CLASS` varchar(255) NOT NULL COMMENT '依赖类BeanId',
+  `AUTHOR` varchar(255) NOT NULL COMMENT '作者',
+  `TIMESTAMP` varchar(255) NOT NULL COMMENT '时间戳',
+  PRIMARY KEY (`AT_INDX`, `CLASS_NAME`),
+  INDEX `AT_Index_1`(`AT_INDX`),
+  INDEX `AT_Index_2`(`CLASS_NAME`)
+);
+
+#调用入口表
+CREATE TABLE `AutoTest`.`ClassInvokers`  (
+  `IV_Index` int(255) NOT NULL AUTO_INCREMENT COMMENT '序号',
+  `CLASS_NAME` varchar(255) NOT NULL COMMENT '调用实现类',
+  `AUTHOR` varchar(255) NOT NULL COMMENT '作者',
+  `TIME` varchar(255) NOT NULL COMMENT '更新时间',
+  PRIMARY KEY (`IV_Index`, `CLASS_NAME`),
+  INDEX `IV_Index_1`(`IV_Index`),
+  INDEX `IV_Index_2`(`CLASS_NAME`)
+);
